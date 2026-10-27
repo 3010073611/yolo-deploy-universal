@@ -44,12 +44,16 @@ description: YOLO 训练→量化→部署 全平台手册：选路线、导出 
 
 ## 文档地图（按需读，不要一次全读）
 
+> 下面所有路径都相对**本 skill 根目录**（即 `SKILL.md` 所在目录），不是当前工作目录。加载 skill 时会给出这个目录的绝对路径；不确定就用绝对路径。
+
 - `references/tutorial.md` —— 新手跟做主线：数据 / 训练 / 导出 / 量化 / 九张路线卡 / 验收
 - `references/handbook.md` —— 决策树、速查表、量化方法论、排障树（**遇到问题先查这本**）
 - `references/route-status.md` —— 每条路线的「已验证 / 仅二手资料」标签与权威文档入口
 - `references/changelog.md` —— 本版相对原始文档改了什么、依据是什么
 
 ## 先跑脚本，再相信文档
+
+（同样相对 skill 根目录；跑的时候把路径补全成绝对路径最稳。）
 
 - `scripts/lint_deploy_config.py` —— 拿 ONNX 的真实输入/输出名核对 `config.json`、`.mud`、`dataset.yaml`；把「层名写错 / labels 顺序错 / 输出数量不匹配」当场抓出来（比读十条注意事项管用）
 - `scripts/check_onnx_vs_pt.py` —— 同一张图跑 `.pt` 与 `.onnx`，最大误差 < 1e-3 才算导出成功

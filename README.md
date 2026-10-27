@@ -61,6 +61,18 @@ New-Item -ItemType Junction -Path "$env:USERPROFILE\.dsh\skills\yolo-deploy" `
 
 > 也支持项目级安装：`<仓库根>/.dsh/skills/yolo-deploy/`。
 
+## 发布到 GitHub
+
+仓库已经 `git init` 并完成首次提交（分支 `main`）。在 GitHub 上建一个**空仓库**（不要勾选自动生成 README），然后：
+
+```powershell
+cd $env:USERPROFILE\.dsh\skills\yolo-deploy
+git remote add origin https://github.com/<你的账号>/yolo-deploy-universal.git
+git push -u origin main
+```
+
+之后的日常改动：`git add -A && git commit -m "docs: 修正 XXX" && git push`。
+
 ## 快速开始（脚本）
 
 ```powershell
