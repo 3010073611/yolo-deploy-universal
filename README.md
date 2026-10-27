@@ -52,7 +52,7 @@
 
 ```powershell
 # 方式 A：直接放进用户级 skill 目录（所有项目可用）
-git clone https://github.com/<你的账号>/yolo-deploy-universal.git "$env:USERPROFILE\.dsh\skills\yolo-deploy"
+git clone https://github.com/3010073611/yolo-deploy-universal.git "$env:USERPROFILE\.dsh\skills\yolo-deploy"
 
 # 方式 B：仓库放在别处，用目录联接指过去（Windows 不需要管理员权限）
 New-Item -ItemType Junction -Path "$env:USERPROFILE\.dsh\skills\yolo-deploy" `
@@ -61,17 +61,19 @@ New-Item -ItemType Junction -Path "$env:USERPROFILE\.dsh\skills\yolo-deploy" `
 
 > 也支持项目级安装：`<仓库根>/.dsh/skills/yolo-deploy/`。
 
-## 发布到 GitHub
+## 仓库地址与日常更新
 
-仓库已经 `git init` 并完成首次提交（分支 `main`）。在 GitHub 上建一个**空仓库**（不要勾选自动生成 README），然后：
+公开仓库：<https://github.com/3010073611/yolo-deploy-universal>
 
 ```powershell
 cd $env:USERPROFILE\.dsh\skills\yolo-deploy
-git remote add origin https://github.com/<你的账号>/yolo-deploy-universal.git
-git push -u origin main
+git add -A
+git commit -m "docs: 修正 XXX"
+git push
 ```
 
-之后的日常改动：`git add -A && git commit -m "docs: 修正 XXX" && git push`。
+> 从零重建远端时：在 GitHub 建**空仓库**（不要勾 README/gitignore/license），然后
+> `git remote add origin https://github.com/<账号>/<仓库>.git && git push -u origin main`。
 
 ## 快速开始（脚本）
 
