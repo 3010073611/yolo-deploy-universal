@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 模型与大文件（不要进版本库）
+*.pt
+*.onnx
+*.rknn
+*.axmodel
+*.mud
+*.cvimodel
+*.bmodel
+*.engine
+*.mnn
+*.param
+*.bin
+*.tar
+*.tar.gz
+
+# 训练/转换产物
+runs/
+dataset/
+out*/
+snapshot/
+calib/
+
+# 例外：assets 里的模板要进版本库
+!assets/model.mud
+!assets/*.json
+!assets/*.py
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
